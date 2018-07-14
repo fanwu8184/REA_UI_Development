@@ -14,6 +14,13 @@
 		B9C6552B20F978A600B8F343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9C6552920F978A600B8F343 /* LaunchScreen.storyboard */; };
 		B9C6553620F978A600B8F343 /* REA_UI_DevelopmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6553520F978A600B8F343 /* REA_UI_DevelopmentTests.swift */; };
 		B9C6554120F978A600B8F343 /* REA_UI_DevelopmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6554020F978A600B8F343 /* REA_UI_DevelopmentUITests.swift */; };
+		B9C6555320F9854000B8F343 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555220F9854000B8F343 /* Property.swift */; };
+		B9C6555520F987DE00B8F343 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B9C6555420F987DD00B8F343 /* Default-568h@2x.png */; };
+		B9C6555720F98AB600B8F343 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555620F98AB600B8F343 /* DataService.swift */; };
+		B9C6555920F98AFE00B8F343 /* Agency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555820F98AFE00B8F343 /* Agency.swift */; };
+		B9C6555B20F98B0F00B8F343 /* BrandingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */; };
+		B9C6556020F9C0D500B8F343 /* DataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555F20F9C0D500B8F343 /* DataFormat.swift */; };
+		B9C6556220F9CB5C00B8F343 /* ResultsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		B9C6553C20F978A600B8F343 /* REA_UI_DevelopmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = REA_UI_DevelopmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9C6554020F978A600B8F343 /* REA_UI_DevelopmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REA_UI_DevelopmentUITests.swift; sourceTree = "<group>"; };
 		B9C6554220F978A600B8F343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9C6555220F9854000B8F343 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		B9C6555420F987DD00B8F343 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B9C6555620F98AB600B8F343 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		B9C6555820F98AFE00B8F343 /* Agency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agency.swift; sourceTree = "<group>"; };
+		B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandingColors.swift; sourceTree = "<group>"; };
+		B9C6555F20F9C0D500B8F343 /* DataFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormat.swift; sourceTree = "<group>"; };
+		B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,11 @@
 		B9C6551F20F978A400B8F343 /* REA_UI_Development */ = {
 			isa = PBXGroup;
 			children = (
-				B9C6552020F978A400B8F343 /* AppDelegate.swift */,
-				B9C6552220F978A400B8F343 /* ViewController.swift */,
-				B9C6552420F978A400B8F343 /* Main.storyboard */,
-				B9C6552720F978A600B8F343 /* Assets.xcassets */,
-				B9C6552920F978A600B8F343 /* LaunchScreen.storyboard */,
 				B9C6552C20F978A600B8F343 /* Info.plist */,
+				B9C6554E20F9835B00B8F343 /* Models */,
+				B9C6555120F9846700B8F343 /* Views */,
+				B9C6555020F9843200B8F343 /* Controller */,
+				B9C6554F20F983C200B8F343 /* SupportFiles */,
 			);
 			path = REA_UI_Development;
 			sourceTree = "<group>";
@@ -123,6 +136,46 @@
 				B9C6554220F978A600B8F343 /* Info.plist */,
 			);
 			path = REA_UI_DevelopmentUITests;
+			sourceTree = "<group>";
+		};
+		B9C6554E20F9835B00B8F343 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B9C6555820F98AFE00B8F343 /* Agency.swift */,
+				B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */,
+				B9C6555F20F9C0D500B8F343 /* DataFormat.swift */,
+				B9C6555620F98AB600B8F343 /* DataService.swift */,
+				B9C6555220F9854000B8F343 /* Property.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B9C6554F20F983C200B8F343 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B9C6555420F987DD00B8F343 /* Default-568h@2x.png */,
+				B9C6552020F978A400B8F343 /* AppDelegate.swift */,
+				B9C6552720F978A600B8F343 /* Assets.xcassets */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		B9C6555020F9843200B8F343 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B9C6552220F978A400B8F343 /* ViewController.swift */,
+				B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B9C6555120F9846700B8F343 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B9C6552920F978A600B8F343 /* LaunchScreen.storyboard */,
+				B9C6552420F978A400B8F343 /* Main.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9C6552B20F978A600B8F343 /* LaunchScreen.storyboard in Resources */,
+				B9C6555520F987DE00B8F343 /* Default-568h@2x.png in Resources */,
 				B9C6552820F978A600B8F343 /* Assets.xcassets in Resources */,
 				B9C6552620F978A400B8F343 /* Main.storyboard in Resources */,
 			);
@@ -256,8 +310,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C6555320F9854000B8F343 /* Property.swift in Sources */,
+				B9C6556220F9CB5C00B8F343 /* ResultsCVC.swift in Sources */,
 				B9C6552320F978A400B8F343 /* ViewController.swift in Sources */,
 				B9C6552120F978A400B8F343 /* AppDelegate.swift in Sources */,
+				B9C6555920F98AFE00B8F343 /* Agency.swift in Sources */,
+				B9C6556020F9C0D500B8F343 /* DataFormat.swift in Sources */,
+				B9C6555B20F98B0F00B8F343 /* BrandingColors.swift in Sources */,
+				B9C6555720F98AB600B8F343 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

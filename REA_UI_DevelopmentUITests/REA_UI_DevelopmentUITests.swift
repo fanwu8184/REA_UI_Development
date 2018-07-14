@@ -2,7 +2,7 @@
 //  REA_UI_DevelopmentUITests.swift
 //  REA_UI_DevelopmentUITests
 //
-//  Created by Fan Wu on 7/14/18.
+//  Created by *** on 7/14/18.
 //  Copyright © 2018 8184. All rights reserved.
 //
 
