@@ -7,30 +7,48 @@
 //
 
 import UIKit
+private let heightOfLogoBlock = UIScreen.main.bounds.height / 20
+private let heightOfPriceBlock: CGFloat = UIScreen.main.bounds.height / 20
 
 class ResultsCell: UICollectionViewCell {
-    @IBOutlet weak var logoBackground: UIView!
-    @IBOutlet weak var logoImage: UIImageView!
-    @IBOutlet weak var mainImage: UIImageView!
+    
+    @IBOutlet weak var logoBlockView: UIView!
+    @IBOutlet weak var logoImageView: UIImageView!
+    @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var logoBlockViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var priceBlockViewHeight: NSLayoutConstraint!
+    
     var property: Property? {
         didSet {
             //set image to nil first to remove reused cell setting
-            logoImage.image = nil
-            mainImage.image = nil
+            logoImageView.image = nil
+            mainImageView.image = nil
+            
+            logoBlockViewHeight.constant = heightOfLogoBlock
+            priceBlockViewHeight.constant = heightOfPriceBlock
             
             if let hexString = property?.agency?.brandingColors?.primary {
-                logoBackground.backgroundColor = UIColor(hex: hexString)
+                logoBlockView.backgroundColor = UIColor(hex: hexString)
             }
             if let logoImageURL = property?.agency?.logo {
-                logoImage.imageFromServerURL(urlString: logoImageURL)
+                logoImageView.imageFromServerURL(urlString: logoImageURL)
             }
             if let mainImageURL = property?.mainImage {
-                mainImage.imageFromServerURL(urlString: mainImageURL)
+                mainImageView.imageFromServerURL(urlString: mainImageURL)
             }
             if let price = property?.price {
                 priceLabel.text = price
             }
         }
     }
+    
+    @IBAction func saveAndUnsave(_ sender: UIButton) {
+        if sender.currentImage == #imageLiteral(resourceName: "heartOff") {
+            sender.setImage(#imageLiteral(resourceName: "heartOn"), for: .normal)
+        } else {
+            sender.setImage(#imageLiteral(resourceName: "heartOff"), for: .normal)
+        }
+    }
+    
 }

@@ -14,7 +14,7 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     var dataFromServer: DataFormat?
     let dbService = DataService()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         dbService.loadData { (dataFormat, error) in
@@ -28,6 +28,14 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
                 }
             }
         }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let speakingBVC = segue.destination as? DIVC {
+//            speakingBVC.data = data
+//            speakingBVC.currentPage = sender as? IndexPath
+//        }
     }
 
     // MARK: UICollectionViewDataSource

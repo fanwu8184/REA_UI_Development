@@ -52,26 +52,44 @@
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.87685283680000004" green="0.92104608750000005" blue="0.35487843810000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstItem="1E3-W4-WTp" firstAttribute="leading" secondItem="cVm-Mq-RyL" secondAttribute="leading" constant="8" id="Dpu-9a-3Fs"/>
-                                                        <constraint firstAttribute="height" constant="30" id="Fph-4n-Mrr"/>
-                                                        <constraint firstAttribute="bottom" secondItem="1E3-W4-WTp" secondAttribute="bottom" id="jUv-kK-66r"/>
-                                                        <constraint firstAttribute="trailing" secondItem="1E3-W4-WTp" secondAttribute="trailing" constant="8" id="ovy-v2-1Rt"/>
-                                                        <constraint firstItem="1E3-W4-WTp" firstAttribute="top" secondItem="cVm-Mq-RyL" secondAttribute="top" id="rBN-GQ-adf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1E3-W4-WTp" secondAttribute="trailing" constant="8" id="HTe-bx-Lbw"/>
+                                                        <constraint firstItem="1E3-W4-WTp" firstAttribute="leading" secondItem="cVm-Mq-RyL" secondAttribute="leading" constant="8" id="ZSl-Kw-PZD"/>
+                                                        <constraint firstAttribute="height" constant="30" id="heO-Ck-htR"/>
+                                                        <constraint firstItem="1E3-W4-WTp" firstAttribute="top" secondItem="cVm-Mq-RyL" secondAttribute="top" id="jc4-wL-RgE"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1E3-W4-WTp" secondAttribute="bottom" id="zFw-d6-JPD"/>
                                                     </constraints>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UVh-Yf-qfo">
                                                     <rect key="frame" x="0.0" y="30" width="359" height="268"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXL-Qv-nMe">
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yim-UZ-Jin">
                                                     <rect key="frame" x="0.0" y="298" width="359" height="30"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXL-Qv-nMe">
+                                                            <rect key="frame" x="0.0" y="0.0" width="179.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wg5-bj-g4H">
+                                                            <rect key="frame" x="179.5" y="0.0" width="179.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="1"/>
+                                                            <state key="normal" title="Button" image="heartOff"/>
+                                                            <connections>
+                                                                <action selector="saveAndUnsave:" destination="RNf-xG-w7s" eventType="touchUpInside" id="wj4-a5-5Jj"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="9w4-wP-8hF"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Zz1-dv-mIt"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="yim-UZ-Jin" secondAttribute="bottom" id="Kqe-b5-yz4"/>
+                                                <constraint firstAttribute="trailing" secondItem="yim-UZ-Jin" secondAttribute="trailing" id="Ygm-DE-n3u"/>
+                                                <constraint firstItem="yim-UZ-Jin" firstAttribute="leading" secondItem="8l2-Sb-NSA" secondAttribute="leading" id="c0w-aC-8AN"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                 </view>
@@ -82,9 +100,11 @@
                                     <constraint firstAttribute="bottom" secondItem="8l2-Sb-NSA" secondAttribute="bottom" id="ola-X9-X1j"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="logoBackground" destination="cVm-Mq-RyL" id="zgM-TX-Wnp"/>
-                                    <outlet property="logoImage" destination="5V1-yt-wpg" id="2KU-nm-hTA"/>
-                                    <outlet property="mainImage" destination="UVh-Yf-qfo" id="PpA-M3-tYM"/>
+                                    <outlet property="logoBlockView" destination="cVm-Mq-RyL" id="wwp-aj-zUw"/>
+                                    <outlet property="logoBlockViewHeight" destination="heO-Ck-htR" id="x4Y-Tt-ezK"/>
+                                    <outlet property="logoImageView" destination="5V1-yt-wpg" id="jEw-uo-toT"/>
+                                    <outlet property="mainImageView" destination="UVh-Yf-qfo" id="Ie6-Oz-mv8"/>
+                                    <outlet property="priceBlockViewHeight" destination="Zz1-dv-mIt" id="HTc-VK-Abi"/>
                                     <outlet property="priceLabel" destination="VXL-Qv-nMe" id="yns-2V-78F"/>
                                 </connections>
                             </collectionViewCell>
@@ -94,11 +114,52 @@
                             <outlet property="delegate" destination="tGI-NB-0QG" id="e1G-WP-fcR"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Results" id="Gcz-0O-2dE"/>
+                    <navigationItem key="navigationItem" title="Results" id="Gcz-0O-2dE">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="IC1-73-jyf">
+                            <connections>
+                                <segue destination="7Zp-nq-7SX" kind="show" id="0sz-Wd-taB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GrD-nQ-JAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-36" y="-259.52023988005999"/>
+        </scene>
+        <!--Saved Properties-->
+        <scene sceneID="WtO-e7-2gN">
+            <objects>
+                <collectionViewController id="7Zp-nq-7SX" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="CZ4-yh-bPB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="e3P-Xj-Lal">
+                            <size key="itemSize" width="286" height="298"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WRz-ID-fch">
+                                <rect key="frame" x="44.5" y="0.0" width="286" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="286" height="298"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="7Zp-nq-7SX" id="em3-N4-dbJ"/>
+                            <outlet property="delegate" destination="7Zp-nq-7SX" id="tUQ-jz-9cU"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Saved Properties" id="aIM-8n-0SW"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GCv-KS-loH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="648.79999999999995" y="-274.81259370314842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zig-ai-c4f">
@@ -119,4 +180,7 @@
             <point key="canvasLocation" x="-975.20000000000005" y="-259.52023988005999"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heartOff" width="16" height="16"/>
+    </resources>
 </document>
