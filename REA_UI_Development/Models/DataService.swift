@@ -8,12 +8,11 @@
 
 import Foundation
 
-//I have stored the Json data in a web
-private let dataURLString = "https://api.myjson.com/bins/cmq8e"
-private let urlError = "Invalid URL!"
-private let webError = "Error Getting Website!"
-private let noData = "No Available Data!"
-private let jsonError = "Error Serializing Json!"
+private let dataURLString = "https://api.myjson.com/bins/cmq8e"    //I have stored the Json data in a web
+private let urlError = "Invalid URL!"                //define url error message
+private let webError = "Error Getting Website!"      //define web error message
+private let noData = "No Available Data!"            //define no available data message
+private let jsonError = "Error Serializing Json!"    //define decoding JSON error message
 
 class DataService {
     

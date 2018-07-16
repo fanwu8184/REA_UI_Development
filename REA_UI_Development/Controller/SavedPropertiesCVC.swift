@@ -13,7 +13,7 @@ private let numberOfPropertyInScreen: CGFloat = 3   //define how many properties
 
 class SavedPropertiesCVC: UICollectionViewController {
 
-    private var dataFromServer: DataFormat?
+    var dataFromServer: DataFormat?
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //define the size of a view about property

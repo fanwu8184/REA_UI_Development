@@ -19,6 +19,7 @@ class DataFormat: Decodable {
      - returns: true or false
      */
     func containsProperty(_ property: Property?) -> Bool {
+        //compare two properties base on their id
         return saved.contains{ $0.id == property?.id }
     }
     
@@ -38,6 +39,7 @@ class DataFormat: Decodable {
      - property: property object
      */
     func removeProperty(_ property: Property?) {
+        //compare two properties base on their id
         guard let idx = (saved.index { $0.id == property?.id }) else { return }
         saved.remove(at: idx)
     }
