@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-//For Hex Color Value
+//make UIColor be able to handle hex Color Value
 extension UIColor {
     
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         if (cString.hasPrefix("#")) { cString.removeFirst() }
-        
+
         if ((cString.count) != 6) {
             self.init(hex: "ff0000") // return red color for wrong hex input
             return
@@ -32,7 +32,7 @@ extension UIColor {
     }
 }
 
-//For Download Image from URL
+//make UIImageView be able to load the image from a URL
 extension UIImageView {
     public func imageFromServerURL(urlString: String) {
         

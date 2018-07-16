@@ -145,11 +145,11 @@
 		B9C6554E20F9835B00B8F343 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B9C6555820F98AFE00B8F343 /* Agency.swift */,
 				B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */,
+				B9C6555820F98AFE00B8F343 /* Agency.swift */,
+				B9C6555220F9854000B8F343 /* Property.swift */,
 				B9C6555F20F9C0D500B8F343 /* DataFormat.swift */,
 				B9C6555620F98AB600B8F343 /* DataService.swift */,
-				B9C6555220F9854000B8F343 /* Property.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -9,14 +9,17 @@
 import UIKit
 
 private let reuseIdentifier = "PropertyCell"
+private let numberOfPropertyInScreen: CGFloat = 3  //define how many properties wanted to be shown in the screen
 
 class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var dataFromServer: DataFormat?
-    let dbService = DataService()
+    private var dataFromServer: DataFormat?
+    private let dbService = DataService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //load data from server
         dbService.loadData { (dataFormat, error) in
             if let err = error {
                 print (err)
@@ -32,7 +35,14 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        //need to update the view so that it shows the results after actions done by users.
         self.collectionView?.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //define the size of a view about property
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / numberOfPropertyInScreen)
     }
     
     // MARK: - Navigation
@@ -62,9 +72,5 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
         let propertyCell = cell as! PropertyCell
         propertyCell.dataFromServer = dataFromServer
         propertyCell.property = dataFromServer?.results[indexPath.item]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / 3)
     }
 }

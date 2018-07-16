@@ -17,22 +17,33 @@ private let jsonError = "Error Serializing Json!"
 
 class DataService {
     
+    /**
+     load data from web server (here just a web url)
+     - parameters:
+     - callback: provide DataFormat(data) and String(Error message) when loading data is done
+     */
     func loadData(completion: @escaping (DataFormat?, String?) -> Void) {
         guard let url = URL(string: dataURLString) else {
             completion(nil, urlError)
             return
         }
+        
+        //download data from url and decode the data
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             //might need to work with response
+            
             guard error == nil else {
                 completion(nil, webError)
                 return
             }
+            
             guard let jsonData = data else {
                 completion(nil, noData)
                 return
             }
+            
             do {
+                //decode data
                 let BackendData = try JSONDecoder().decode(DataFormat.self, from: jsonData)
                 completion(BackendData, nil)
             } catch {
@@ -41,7 +52,8 @@ class DataService {
         }.resume()
     }
     
+    ///do something to save data into server
     func saveData() {
-        //do something to save data on server
+        //TODO
     }
 }

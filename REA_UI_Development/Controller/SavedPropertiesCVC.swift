@@ -9,10 +9,16 @@
 import UIKit
 
 private let reuseIdentifier = "PropertyCell"
+private let numberOfPropertyInScreen: CGFloat = 3   //define how many properties wanted to be shown in the screen
 
 class SavedPropertiesCVC: UICollectionViewController {
 
-    var dataFromServer: DataFormat?
+    private var dataFromServer: DataFormat?
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        //define the size of a view about property
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / numberOfPropertyInScreen)
+    }
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -33,9 +39,5 @@ class SavedPropertiesCVC: UICollectionViewController {
         let propertyCell = cell as! PropertyCell
         propertyCell.dataFromServer = dataFromServer
         propertyCell.property = dataFromServer?.saved[indexPath.item]
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height / 3)
     }
 }
