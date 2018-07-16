@@ -10,7 +10,7 @@ import UIKit
 private let heightOfLogoBlock = UIScreen.main.bounds.height / 20
 private let heightOfPriceBlock: CGFloat = UIScreen.main.bounds.height / 20
 
-class ResultsCell: UICollectionViewCell {
+class PropertyCell: UICollectionViewCell {
     
     @IBOutlet weak var logoBlockView: UIView!
     @IBOutlet weak var logoImageView: UIImageView!
@@ -18,27 +18,43 @@ class ResultsCell: UICollectionViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var logoBlockViewHeight: NSLayoutConstraint!
     @IBOutlet weak var priceBlockViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var savePropertyButton: UIButton!
+    let dbService = DataService()
+    var dataFromServer: DataFormat?
     
     var property: Property? {
         didSet {
-            //set image to nil first to remove reused cell setting
-            logoImageView.image = nil
-            mainImageView.image = nil
-            
             logoBlockViewHeight.constant = heightOfLogoBlock
             priceBlockViewHeight.constant = heightOfPriceBlock
             
             if let hexString = property?.agency?.brandingColors?.primary {
                 logoBlockView.backgroundColor = UIColor(hex: hexString)
+            } else {
+                logoBlockView.backgroundColor = UIColor.white
             }
+            
             if let logoImageURL = property?.agency?.logo {
                 logoImageView.imageFromServerURL(urlString: logoImageURL)
+            } else {
+                logoImageView.image = nil
             }
+            
             if let mainImageURL = property?.mainImage {
                 mainImageView.imageFromServerURL(urlString: mainImageURL)
+            } else {
+                mainImageView.image = nil
             }
+            
             if let price = property?.price {
                 priceLabel.text = price
+            } else {
+                priceLabel.text = ""
+            }
+            
+            if dataFromServer?.containsProperty(property) ==  true {
+                savePropertyButton.setImage(#imageLiteral(resourceName: "heartOn"), for: .normal)
+            } else {
+                savePropertyButton.setImage(#imageLiteral(resourceName: "heartOff"), for: .normal)
             }
         }
     }
@@ -46,9 +62,12 @@ class ResultsCell: UICollectionViewCell {
     @IBAction func saveAndUnsave(_ sender: UIButton) {
         if sender.currentImage == #imageLiteral(resourceName: "heartOff") {
             sender.setImage(#imageLiteral(resourceName: "heartOn"), for: .normal)
+            dataFromServer?.addProperty(property)
         } else {
             sender.setImage(#imageLiteral(resourceName: "heartOff"), for: .normal)
+            dataFromServer?.removeProperty(property)
         }
+        dbService.saveData()
     }
     
 }

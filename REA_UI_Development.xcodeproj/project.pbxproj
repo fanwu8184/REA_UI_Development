@@ -20,8 +20,9 @@
 		B9C6555B20F98B0F00B8F343 /* BrandingColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */; };
 		B9C6556020F9C0D500B8F343 /* DataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6555F20F9C0D500B8F343 /* DataFormat.swift */; };
 		B9C6556220F9CB5C00B8F343 /* ResultsCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */; };
-		B9C6556420F9FBD500B8F343 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556320F9FBD500B8F343 /* ResultsCell.swift */; };
+		B9C6556420F9FBD500B8F343 /* PropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556320F9FBD500B8F343 /* PropertyCell.swift */; };
 		B9C6556620FA0D6800B8F343 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556520FA0D6800B8F343 /* Extension.swift */; };
+		B9C6556820FB6D5E00B8F343 /* SavedPropertiesCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6556720FB6D5E00B8F343 /* SavedPropertiesCVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +62,9 @@
 		B9C6555A20F98B0F00B8F343 /* BrandingColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandingColors.swift; sourceTree = "<group>"; };
 		B9C6555F20F9C0D500B8F343 /* DataFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormat.swift; sourceTree = "<group>"; };
 		B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCVC.swift; sourceTree = "<group>"; };
-		B9C6556320F9FBD500B8F343 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		B9C6556320F9FBD500B8F343 /* PropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCell.swift; sourceTree = "<group>"; };
 		B9C6556520FA0D6800B8F343 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B9C6556720FB6D5E00B8F343 /* SavedPropertiesCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPropertiesCVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,7 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				B9C6556120F9CB5C00B8F343 /* ResultsCVC.swift */,
-				B9C6556320F9FBD500B8F343 /* ResultsCell.swift */,
+				B9C6556720FB6D5E00B8F343 /* SavedPropertiesCVC.swift */,
+				B9C6556320F9FBD500B8F343 /* PropertyCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,7 +323,8 @@
 				B9C6555920F98AFE00B8F343 /* Agency.swift in Sources */,
 				B9C6556020F9C0D500B8F343 /* DataFormat.swift in Sources */,
 				B9C6555B20F98B0F00B8F343 /* BrandingColors.swift in Sources */,
-				B9C6556420F9FBD500B8F343 /* ResultsCell.swift in Sources */,
+				B9C6556820FB6D5E00B8F343 /* SavedPropertiesCVC.swift in Sources */,
+				B9C6556420F9FBD500B8F343 /* PropertyCell.swift in Sources */,
 				B9C6555720F98AB600B8F343 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
