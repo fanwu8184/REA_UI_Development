@@ -27,6 +27,7 @@
 		B9C6557220FCB84B00B8F343 /* DataFormatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6557120FCB84B00B8F343 /* DataFormatTests.swift */; };
 		B9C6557420FCBECB00B8F343 /* DataServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6557320FCBECB00B8F343 /* DataServiceTests.swift */; };
 		B9C6557820FD80F600B8F343 /* REA_UI_DevelopmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6557720FD80F600B8F343 /* REA_UI_DevelopmentUITests.swift */; };
+		B9C6557A20FD903F00B8F343 /* PropertyCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C6557920FD903F00B8F343 /* PropertyCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		B9C6557120FCB84B00B8F343 /* DataFormatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatTests.swift; sourceTree = "<group>"; };
 		B9C6557320FCBECB00B8F343 /* DataServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataServiceTests.swift; sourceTree = "<group>"; };
 		B9C6557720FD80F600B8F343 /* REA_UI_DevelopmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REA_UI_DevelopmentUITests.swift; sourceTree = "<group>"; };
+		B9C6557920FD903F00B8F343 /* PropertyCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				B9C6556F20FCB67900B8F343 /* PropertyTests.swift */,
 				B9C6557120FCB84B00B8F343 /* DataFormatTests.swift */,
 				B9C6557320FCBECB00B8F343 /* DataServiceTests.swift */,
+				B9C6557920FD903F00B8F343 /* PropertyCellTests.swift */,
 			);
 			path = REA_UI_DevelopmentTests;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			files = (
 				B9C6556C20FCAFCF00B8F343 /* BrandingColorsTests.swift in Sources */,
 				B9C6557220FCB84B00B8F343 /* DataFormatTests.swift in Sources */,
+				B9C6557A20FD903F00B8F343 /* PropertyCellTests.swift in Sources */,
 				B9C6556E20FCB24F00B8F343 /* AgencyTests.swift in Sources */,
 				B9C6557420FCBECB00B8F343 /* DataServiceTests.swift in Sources */,
 				B9C6557020FCB67900B8F343 /* PropertyTests.swift in Sources */,
