@@ -2,7 +2,7 @@
 //  REA_UI_DevelopmentUITests.swift
 //  REA_UI_DevelopmentUITests
 //
-//  Created by *** on 7/14/18.
+//  Created by *** on 7/17/18.
 //  Copyright © 2018 8184. All rights reserved.
 //
 
@@ -12,25 +12,48 @@ class REA_UI_DevelopmentUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
-        
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    /**
+     test whether the numbers of cells in results view is correct
+     */
+    func testNumbersOfCellsInResultsView() {
+        let collectionViewsQuery = XCUIApplication().collectionViews
+        XCTAssertEqual(collectionViewsQuery.cells.count, 3)
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    /**
+     test whether the numbers of cells in saved properties view is correct
+     */
+    func testNumbersOfCellsInSavedPropertiesView() {
+        let app = XCUIApplication()
+        app.navigationBars["Results"].buttons["Favorites"].tap()
+        XCTAssertEqual(app.collectionViews.cells.count, 1)
     }
     
+    /**
+     test whether the numbers of cells in saved properties view is correct after adding properties
+     */
+    func testAddProperties() {
+        let app = XCUIApplication()
+        app.collectionViews.children(matching: .cell).element(boundBy: 0).buttons["Button"].tap()
+        app.navigationBars["Results"].buttons["Favorites"].tap()
+        app.otherElements.containing(.navigationBar, identifier:"Saved Properties").children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .collectionView).element.swipeUp()
+        XCTAssertEqual(app.collectionViews.cells.count, 2)
+    }
+    
+    /**
+     test whether the numbers of cells in saved properties view is correct after removing properties
+     */
+    func testRemoveProperties() {
+        let app = XCUIApplication()
+        let favoritesButton = app.navigationBars["Results"].buttons["Favorites"]
+        favoritesButton.tap()
+        app.collectionViews/*@START_MENU_TOKEN@*/.buttons["Button"]/*[[".cells.buttons[\"Button\"]",".buttons[\"Button\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Saved Properties"].buttons["Results"].tap()
+        favoritesButton.tap()
+        XCTAssertEqual(app.collectionViews.cells.count, 0)
+    }
 }

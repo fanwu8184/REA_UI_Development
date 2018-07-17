@@ -21,7 +21,7 @@ class PropertyCell: UICollectionViewCell {
     @IBOutlet weak var priceBlockViewHeight: NSLayoutConstraint!
     @IBOutlet weak var savePropertyButton: UIButton!
     private let dbService = DataService()
-    var dataFromServer: DataFormat?
+    var dataFormat: DataFormat?
     
     var property: Property? {
         didSet {
@@ -58,7 +58,7 @@ class PropertyCell: UICollectionViewCell {
             }
             
             //set favorite button image base on whether the property is in the "Saved Properties" list
-            if dataFromServer?.containsProperty(property) ==  true {
+            if dataFormat?.containsProperty(property) ==  true {
                 savePropertyButton.setImage(#imageLiteral(resourceName: "heartOn"), for: .normal)
             } else {
                 savePropertyButton.setImage(#imageLiteral(resourceName: "heartOff"), for: .normal)
@@ -75,11 +75,11 @@ class PropertyCell: UICollectionViewCell {
         if sender.currentImage == #imageLiteral(resourceName: "heartOff") {
             //set it as favorite and add the property into "Saved Properties" list
             sender.setImage(#imageLiteral(resourceName: "heartOn"), for: .normal)
-            dataFromServer?.addProperty(property)
+            dataFormat?.addProperty(property)
         } else {
             //set it as unfavorite and remove the property from "Saved Properties" list
             sender.setImage(#imageLiteral(resourceName: "heartOff"), for: .normal)
-            dataFromServer?.removeProperty(property)
+            dataFormat?.removeProperty(property)
         }
         
         //save the change into server

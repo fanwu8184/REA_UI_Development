@@ -2,7 +2,7 @@
 //  DataFormatTests.swift
 //  REA_UI_DevelopmentTests
 //
-//  Created by Fan Wu on 7/16/18.
+//  Created by *** on 7/16/18.
 //  Copyright © 2018 8184. All rights reserved.
 //
 

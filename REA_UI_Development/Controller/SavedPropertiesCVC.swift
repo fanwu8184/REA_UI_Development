@@ -13,7 +13,7 @@ private let numberOfPropertyInScreen: CGFloat = 3   //define how many properties
 
 class SavedPropertiesCVC: UICollectionViewController {
 
-    var dataFromServer: DataFormat?
+    var dataFormat: DataFormat?
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //define the size of a view about property
@@ -26,7 +26,7 @@ class SavedPropertiesCVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataFromServer?.saved.count ?? 0
+        return dataFormat?.saved.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -37,7 +37,7 @@ class SavedPropertiesCVC: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let propertyCell = cell as! PropertyCell
-        propertyCell.dataFromServer = dataFromServer
-        propertyCell.property = dataFromServer?.saved[indexPath.item]
+        propertyCell.dataFormat = dataFormat
+        propertyCell.property = dataFormat?.saved[indexPath.item]
     }
 }

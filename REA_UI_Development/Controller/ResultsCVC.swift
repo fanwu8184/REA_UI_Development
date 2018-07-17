@@ -13,8 +13,8 @@ private let numberOfPropertyInScreen: CGFloat = 3  //define how many properties 
 
 class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    private var dataFromServer: DataFormat?
     private let dbService = DataService()
+    var dataFormat: DataFormat?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
                 print (err)
                 return
             } else {
-                self.dataFromServer = dataFormat
+                self.dataFormat = dataFormat
                 DispatchQueue.main.async { 
                     self.collectionView?.reloadData()
                 }
@@ -48,7 +48,7 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let savedPropertiesCVC = segue.destination as? SavedPropertiesCVC {
-            savedPropertiesCVC.dataFromServer = dataFromServer
+            savedPropertiesCVC.dataFormat = dataFormat
         }
     }
 
@@ -59,7 +59,7 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataFromServer?.results.count ?? 0
+        return dataFormat?.results.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -70,7 +70,7 @@ class ResultsCVC: UICollectionViewController, UICollectionViewDelegateFlowLayout
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let propertyCell = cell as! PropertyCell
-        propertyCell.dataFromServer = dataFromServer
-        propertyCell.property = dataFromServer?.results[indexPath.item]
+        propertyCell.dataFormat = dataFormat
+        propertyCell.property = dataFormat?.results[indexPath.item]
     }
 }
